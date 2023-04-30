@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -13,6 +13,12 @@ const Home = () => {
     setBlogs(newBlogs);
   }
 
+  // useEffect hook
+   useEffect(() => {
+     console.log('use effect ran');
+   });
+
+
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
@@ -21,3 +27,6 @@ const Home = () => {
 }
  
 export default Home;
+
+// q: the difference between a useState hook and a useEffect hook?
+// a: useState is used to store a value in a component, and useEffect is used to do something after render.
